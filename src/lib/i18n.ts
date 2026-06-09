@@ -54,6 +54,45 @@ export const translations = {
 
     slots_label: "Limited spots remaining",
     slots_urgency: "Moving fast — don't miss your spot.",
+
+    // ── Problems section ──────────────────────────────────────────
+    problems_badge: "The Problem",
+    problems_title: "What's Broken Today.",
+    problem_1_title: "Rigid Directories",
+    problem_1_desc:
+      "Static, uncurated lists that bundle every AI tool together with no quality filter or real-world performance data.",
+    problem_2_title: "No Arabic Support",
+    problem_2_desc:
+      "The global AI discovery space has almost entirely ignored Arabic-speaking markets and right-to-left workflows.",
+    problem_3_title: "No ROI Analysis",
+    problem_3_desc:
+      "Tools are listed, never evaluated. There is no structured way to measure actual value against your specific use case.",
+    problem_4_title: "Outdated Content",
+    problem_4_desc:
+      "Rapidly evolving models become stale the moment they are published. Most platforms never catch up.",
+
+    // ── Feedback section ──────────────────────────────────────────
+    feedback_badge: "Your Feedback",
+    feedback_title: "Shape What's Coming.",
+    feedback_rating_label: "Rate your anticipation",
+    feedback_placeholder:
+      "Share your thoughts, suggestions, or features you'd like to see...",
+    feedback_submit: "Send Feedback",
+    feedback_success: "Feedback received. Thank you.",
+    feedback_error: "Something went wrong. Please try again.",
+
+    // ── FAQ section ───────────────────────────────────────────────
+    faq_badge: "FAQ",
+    faq_title: "Common Questions.",
+    faq_1_q: "What is AiRank and how is it different?",
+    faq_1_a:
+      "AiRank is a data-driven AI benchmarking platform — not a directory. Every tool is evaluated against measurable performance signals, real-world capability metrics, and structured use-case fit. We rank; we do not simply list.",
+    faq_2_q: "When is the official launch?",
+    faq_2_a:
+      "The Private Beta launches on June 16, 2026. Waitlist members are the first and only ones to receive access — no public signup, no exceptions. Secure your spot now.",
+    faq_3_q: "Will AiRank fully support Arabic?",
+    faq_3_a:
+      "Native Arabic support is a primary launch pillar, not an afterthought. AiRank is built with full RTL rendering, Arabic-language tool evaluation, and a localized discovery experience from day one.",
   },
   ar: {
     dir: "rtl",
@@ -108,5 +147,44 @@ export const translations = {
 
     slots_label: "عدد الأماكن المتبقية",
     slots_urgency: "الطلب مرتفع — لا تفوّت مكانك.",
+
+    // ── Problems section ──────────────────────────────────────────
+    problems_badge: "المشكلة",
+    problems_title: "ما الذي يحتاج إلى إصلاح.",
+    problem_1_title: "قوائم جامدة",
+    problem_1_desc:
+      "قوائم ثابتة وغير مُنتقاة تضم كل أداة دون فلترة للجودة أو بيانات أداء حقيقية.",
+    problem_2_title: "لا دعم للعربية",
+    problem_2_desc:
+      "يتجاهل فضاء اكتشاف الذكاء الاصطناعي العالمي الأسواق الناطقة بالعربية وتدفقات العمل من اليمين إلى اليسار.",
+    problem_3_title: "لا تحليل للعائد",
+    problem_3_desc:
+      "تُدرج الأدوات دون تقييم. لا توجد طريقة منظمة لقياس القيمة الفعلية وفق حالة الاستخدام.",
+    problem_4_title: "محتوى قديم",
+    problem_4_desc:
+      "النماذج المتطورة تصبح قديمة بمجرد نشرها. معظم المنصات لا تواكب هذا التطور أبداً.",
+
+    // ── Feedback section ──────────────────────────────────────────
+    feedback_badge: "رأيك يهمنا",
+    feedback_title: "ساهم في تشكيل ما يأتي.",
+    feedback_rating_label: "قيّم توقعاتك",
+    feedback_placeholder:
+      "شاركنا أفكارك أو اقتراحاتك أو الميزات التي تود رؤيتها...",
+    feedback_submit: "إرسال",
+    feedback_success: "تم استلام ملاحظاتك. شكراً لك.",
+    feedback_error: "حدث خطأ. حاول مرة أخرى.",
+
+    // ── FAQ section ───────────────────────────────────────────────
+    faq_badge: "الأسئلة الشائعة",
+    faq_title: "أسئلة متكررة.",
+    faq_1_q: "ما هو AiRank وما الذي يميّزه؟",
+    faq_1_a:
+      "AiRank منصة مقارنة ذكاء اصطناعي تعتمد على البيانات — وليست مجرد دليل. يُقيَّم كل أداة وفق إشارات أداء قابلة للقياس ومقاييس موضوعية. نحن نُرتِّب، لا نكتفي بالإدراج.",
+    faq_2_q: "متى سيكون الإطلاق الرسمي؟",
+    faq_2_a:
+      "تنطلق النسخة التجريبية الخاصة في 16 يونيو 2026. أعضاء قائمة الانتظار هم الوحيدون الذين سيحصلون على الوصول — لا تسجيل عام ولا استثناءات. احجز مكانك الآن.",
+    faq_3_q: "هل سيدعم AiRank اللغة العربية بالكامل؟",
+    faq_3_a:
+      "دعم اللغة العربية الأصلية ركيزة أساسية في الإطلاق وليس إضافةً لاحقة. يُبنى AiRank بدعم كامل للكتابة من اليمين إلى اليسار وتقييم أدوات باللغة العربية منذ اليوم الأول.",
   },
 } as const;

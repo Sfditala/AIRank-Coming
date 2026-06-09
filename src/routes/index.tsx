@@ -3,7 +3,9 @@ import { useEffect, useState } from "react";
 import { NeonBackground } from "@/components/NeonBackground";
 import { WaitlistForm } from "@/components/WaitlistForm";
 import { SuccessModal } from "@/components/SuccessModal";
-import { CountdownTimer } from "@/components/CountdownTimer";
+import { ProblemsGrid } from "@/components/ProblemsGrid";
+import { FeedbackForm } from "@/components/FeedbackForm";
+import { FaqAccordion } from "@/components/FaqAccordion";
 import { translations, type Lang } from "@/lib/i18n";
 
 export const Route = createFileRoute("/")({
@@ -55,6 +57,7 @@ function Landing() {
   const [modalOpen, setModal] = useState(false);
   const [isDark, setIsDark]   = useState(true);
   const [slotsLeft]           = useState(312);
+
 
   const t = translations[lang];
 
@@ -119,6 +122,10 @@ function Landing() {
     logoBadgeShadow: isDark
       ? "0 0 18px rgba(204,255,0,0.35)"
       : "0 0 14px rgba(61,90,0,0.18)",
+
+    // Logo wordmark — crisp white glow dark / solid deep black light
+    logoWordColor:  isDark ? "#FFFFFF"                     : "#0a0a0a",
+    logoWordShadow: isDark ? "0 0 22px rgba(255,255,255,0.13)" : "none",
   };
 
   return (
@@ -145,8 +152,15 @@ function Landing() {
             >
               <img src="/ai-rank-logo.png" alt="AI Rank" className="h-8 w-8 object-contain" />
             </span>
-            <span className="font-display text-lg font-bold tracking-wide text-zinc-950 dark:text-white">
-              AI <span style={{ color: tok.accent }}>Rank</span>
+            <span
+              className="font-display text-[17px] font-bold"
+              style={{
+                color:       tok.logoWordColor,
+                textShadow:  tok.logoWordShadow,
+                letterSpacing: "-0.01em",
+              }}
+            >
+              Ai<span style={{ color: tok.accent }}>Rank</span>
             </span>
           </a>
 
@@ -233,9 +247,39 @@ function Landing() {
           {t.badge}
         </span>
 
+        {/* ── Launch timing badge ─────────────────────────────────── */}
+        <div
+          className="animate-rise mt-5 inline-flex items-center gap-2.5 rounded-full
+                     px-5 py-2 text-[10px] font-bold uppercase tracking-[0.22em]"
+          style={{
+            animationDelay: "0.14s",
+            border:     `1px solid ${tok.accentBorder}`,
+            background: tok.accentBg,
+          }}
+        >
+          <span style={{ color: isDark ? "rgba(255,255,255,0.45)" : "rgba(0,0,0,0.45)" }}>
+            {lang === "ar" ? "الإطلاق خلال" : "Launching in"}
+          </span>
+
+          <span
+            className="font-display text-sm font-black tabular-nums"
+            style={{
+              color:      tok.accent,
+              textShadow: isDark ? "0 0 14px rgba(204,255,0,0.55)" : "none",
+              lineHeight: 1,
+            }}
+          >
+            3
+          </span>
+
+          <span style={{ color: isDark ? "rgba(255,255,255,0.45)" : "rgba(0,0,0,0.45)" }}>
+            {lang === "ar" ? "أسابيع" : "weeks"}
+          </span>
+        </div>
+
         {/* Headline — identical weight/size/tracking in both modes */}
         <h1
-          className="animate-rise mt-7 font-display font-bold tracking-tight
+          className="animate-rise mt-6 font-display font-bold tracking-tight
                      text-3xl  leading-tight
                      sm:text-5xl sm:leading-[1.05]
                      md:text-6xl
@@ -278,14 +322,6 @@ function Landing() {
           {t.subhead}
         </p>
 
-        {/* Countdown timer */}
-        <div
-          className="animate-rise mt-10 flex justify-center"
-          style={{ animationDelay: "0.38s" }}
-        >
-          <CountdownTimer lang={lang} isDark={isDark} />
-        </div>
-
         {/* Slots urgency pill */}
         <div
           className="animate-rise mt-5 inline-flex items-center gap-2 rounded-full
@@ -309,6 +345,15 @@ function Landing() {
           <WaitlistForm lang={lang} onSuccess={() => setModal(true)} />
         </div>
       </main>
+
+      {/* ══════════════════════════ PROBLEMS ══════════════════════════ */}
+      <ProblemsGrid lang={lang} isDark={isDark} />
+
+      {/* ══════════════════════════ FEEDBACK ══════════════════════════ */}
+      <FeedbackForm lang={lang} isDark={isDark} />
+
+      {/* ══════════════════════════ FAQ ══════════════════════════════ */}
+      <FaqAccordion lang={lang} isDark={isDark} />
 
       {/* ══════════════════════════ FOOTER ══════════════════════════ */}
       <footer
