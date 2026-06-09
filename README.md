@@ -43,4 +43,4 @@ AiRank is that advantage — codified into a platform.
 
 ---
 
-_© 2026 AiRank — VersoAI. Built for the next era of intelligence._
+_© 2026 AiRank . Built for the next era of intelligence._
